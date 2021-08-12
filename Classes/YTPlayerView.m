@@ -103,6 +103,10 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
 
 #pragma mark - Player methods
 
+- (void)enterFullscreen {
+    [self evaluateJavaScript:@"document.getElementById('player').contentDocument.getElementsByClassName('video-stream')[0].webkitEnterFullScreen();"];
+}
+
 - (void)playVideo {
   [self evaluateJavaScript:@"player.playVideo();"];
 }
@@ -558,9 +562,7 @@ createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
 
 - (NSURL *)originURL {
   if (!_originURL) {
-    NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
-    NSString *stringURL = [[NSString stringWithFormat:@"http://%@", bundleId] lowercaseString];
-    _originURL = [NSURL URLWithString:stringURL];
+    _originURL = [NSURL URLWithString: @"https://www.youtube.com"];
   }
   return _originURL;
 }

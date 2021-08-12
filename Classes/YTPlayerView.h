@@ -249,6 +249,9 @@ typedef void (^YTPlaybackQualityCompletionHandler)(YTPlaybackQuality result,
 
 #pragma mark - Player controls
 
+- (void)enterFullscreen;
+
+
 // These methods correspond to their JavaScript equivalents as documented here:
 //   https://developers.google.com/youtube/iframe_api_reference#Playback_controls
 
