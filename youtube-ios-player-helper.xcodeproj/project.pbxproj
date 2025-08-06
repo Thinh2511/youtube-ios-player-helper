@@ -33,14 +33,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32706DFB2E43108400E96129 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				32706DF92E43107B00E96129 /* YTPlayerView-iframe-player.html */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		B3C76A101B975AA700F375B4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,8 +52,8 @@
 		B3C76A1C1B975AA700F375B4 /* youtube-ios-player-helper */ = {
 			isa = PBXGroup;
 			children = (
-				32706DFB2E43108400E96129 /* Assets */,
 				B3C76A251B975ADB00F375B4 /* YTPlayerView.h */,
+				32706DF92E43107B00E96129 /* YTPlayerView-iframe-player.html */,
 				B3C76A261B975ADB00F375B4 /* YTPlayerView.m */,
 				B3C76A1F1B975AA700F375B4 /* Info.plist */,
 				B3C76A2D1B975BD500F375B4 /* YouTubeiOSPlayerHelper.h */,
