@@ -562,7 +562,9 @@ createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
 
 - (NSURL *)originURL {
   if (!_originURL) {
-    _originURL = [NSURL URLWithString: @"https://www.youtube.com"];
+    NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
+    NSString *stringURL = [[NSString stringWithFormat:@"http://%@", bundleId] lowercaseString];
+    _originURL = [NSURL URLWithString:stringURL];
   }
   return _originURL;
 }
@@ -748,15 +750,13 @@ createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
 
   NSError *error = nil;
   NSString *path = [[NSBundle bundleForClass:[YTPlayerView class]] pathForResource:@"YTPlayerView-iframe-player"
-                                                   ofType:@"html"
-                                              inDirectory:@"Assets"];
+                                                   ofType:@"html"];
     
   // in case of using Swift and embedded frameworks, resources included not in main bundle,
   // but in framework bundle
   if (!path) {
       path = [[[self class] frameworkBundle] pathForResource:@"YTPlayerView-iframe-player"
-                                                     ofType:@"html"
-                                                inDirectory:@"Assets"];
+                                                     ofType:@"html"];
   }
     
   NSString *embedHTMLTemplate =
